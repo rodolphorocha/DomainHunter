@@ -1,0 +1,14 @@
+**/node_modules/
+**/dist/
+**/.venv/
+**/__pycache__/
+**/.pdm-python
+**/.env
+**/.env.local
+**/db.sqlite3
+**/db.sqlite3-*
+**/media/
+**/.ruff_cache/
+/backend/http/
+/backend/dump.json
+/backend/core.png
