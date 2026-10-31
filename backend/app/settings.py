@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Configurações básicas
 # ============================================================
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure')
-DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
-ALLOWED_HOSTS = ['*']
+SECRET_KEY = os.environ['SECRET_KEY']
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # ============================================================
 # Frontend autorizado
@@ -232,9 +232,9 @@ REST_FRAMEWORK = {
 # ============================================================
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': '<PROJETO> API',
-    'DESCRIPTION': 'API para o projeto <descreva aqui seu projeto>.',
-    'VERSION': '1.0.0',
+    'TITLE': 'DomainHunter API',
+    'DESCRIPTION': 'API para o projeto DomainHunter.',
+    'VERSION': '0.1.0',
 }
 
 # ============================================================
@@ -256,7 +256,6 @@ print('CONFIGURAÇÃO DA APLICAÇÃO')
 print('=' * 70)
 
 print(f'DEBUG....................: {DEBUG if DEBUG else "NÃO DEFINIDO"}')
-print(f'SECRET_KEY...............: {SECRET_KEY if SECRET_KEY else "NÃO DEFINIDA"}')
 
 print()
 
@@ -278,7 +277,5 @@ print()
 
 print(f'CLOUDINARY..............: {"SIM" if CLOUDINARY_URL else "NÃO"}')
 
-if CLOUDINARY_URL:
-    print(f'CLOUDINARY_URL..........: {CLOUDINARY_URL}')
 
 print('=' * 70)
